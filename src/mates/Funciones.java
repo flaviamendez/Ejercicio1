@@ -1,7 +1,6 @@
 
 package mates;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Funciones {
 
@@ -37,7 +36,7 @@ public static int potencia(int base, int exponente) {
 
 // Ejercicio 4 suma lista 
 
-    public static int sumaLista(List<Integer> lista)
+    public static int sumaLista(ArrayList<Integer> lista)
     {
         if (lista.isEmpty()) {
             return 0;
@@ -57,7 +56,14 @@ public static int potencia(int base, int exponente) {
 
 // Ejercicio 6 desviación típica de una lista
 
-
+    public static double desviacionTipica(ArrayList<Integer> lista) {
+        double a = mediaAritm(lista);
+        double raizCuadrada = 0;
+        for (int num : lista) {
+            raizCuadrada += Math.pow(num - a, 2);
+        }
+        return Math.sqrt(raizCuadrada / lista.size());
+    }
 
 
 // Ejercicio 7  La suma de los primeros números pares hasta n asumiendo n ≥ 2. 
@@ -127,7 +133,7 @@ public static int potencia(int base, int exponente) {
 // Ejercicio 11  Producto escalar de dos listas de números no vacías y del mismo tamaño.
 
 
-public int productoEscalar(ArrayList<Integer> lista1, ArrayList<Integer> lista2) {
+public static int productoEscalar(ArrayList<Integer> lista1, ArrayList<Integer> lista2) {
     int producto = 0;
     for (int i = 0; i < lista1.size(); i++) {
         producto += lista1.get(i) * lista2.get(i);
@@ -143,17 +149,25 @@ public static int Fibo(int nm){
     return Fibo(nm-1)+ Fibo(nm-2);
 }
 
-public static String ProductoEscDe2Listas(ArrayList<Integer> lista1, ArrayList<Integer> lista2) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'ProductoEscDe2Listas'");
-}
+
 
 
 
 //Ejercicio 13 Calcule el cociente entre el decimo tercer y el decimo segundo elementode la sucesión de Fibonacci,
 // y compare el resultado con 1+√52 .
 
-//Ejercicio 14 Averigüe la relación entre la sucesión de Fibonacci y la razón áurea
+public static  double cocienteFibo()
+{
+    int a = Fibo(16);
+    int b = Fibo(12);
+    return(double) a / b;
+}
+
+//Ejercicio 14 Averigüe la relación entre la sucesión de Fibonacci y la razón áurea.
+
+public static double razonAurea() {
+    return (1 + Math.sqrt(5)) / 2;
+}
 
 
 }
