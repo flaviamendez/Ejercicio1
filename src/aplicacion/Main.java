@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import mates.*;
 
-public class Principal{
+public class Main{
 
     public static void main(String[] args) {
         ArrayList<Integer> listaP = new ArrayList<>();
